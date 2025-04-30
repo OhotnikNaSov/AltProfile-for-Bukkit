@@ -1,0 +1,34 @@
+name: SAlts
+version: '3.0'
+main: sova.sAlts.Main
+api-version: '1.21'
+depend: [nLogin]
+
+commands:
+  salts:
+    description: Основная команда плагина
+    usage: /salts <subcommand>
+    aliases: [alt]
+
+permissions:
+  salts.db_init:
+    description: Позволяет инициализировать таблицу альтов
+    default: op
+  salts.create:
+    description: Позволяет использовать /salts create
+    default: op
+  salts.reload:
+    description: Позволяет перезагружать конфиг
+    default: op
+  salts.switch:
+    description: Позволяет переключиться на альта
+    default: op
+  salts.switch.admin:
+    description: Позволяет переключиться на любого альта ( Только для Админов )
+    default: op
+  salts.unselect:
+    description: Позволяет снять выбранного альта с alt_selected в БД
+    default: op
+  salts.list:
+    description: Позволяет посмотреть список всех альтов
+    default: op

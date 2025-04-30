@@ -1,0 +1,66 @@
+mysql:
+  host: localhost
+  port: 3306
+  database: alts
+  username: root
+  password: password
+
+cache:
+  refresh-interval-seconds: 300
+
+messages:
+
+  # ━━━━━━━ Общие системные сообщения ━━━━━━━
+  no_permission: "&cУ тебя нет прав на выполнение этой команды!"
+  unknown_command: "&cНеизвестная команда!"
+  sql_error: "&c❌ SQL Ошибка: %error%"
+
+  # ━━━━━━━ Команда: /salts reload ━━━━━━━
+  reload_success: "&a✔ Конфигурация успешно перезагружена!"
+  reload_error: "&c❌ Ошибка при перезагрузке: %error%"
+
+  # ━━━━━━━ Команда: /salts create ━━━━━━━
+  create_usage: "&cИспользование: /salts create <alt_name> <real_name|null> <password>"
+  create_success: "&a✔ Альт &e%name% &aсоздан%owner_info%"
+  nlogin_error: "&c⚠ Ошибка регистрации в nLogin: %error%"
+
+  # ━━━━━━━ Команда: /salts switch ━━━━━━━
+  switch_only_player: "&c⛔ Только игроки могут использовать эту команду."
+  switch_none_selected: "&eℹ У тебя не выбран альт."
+  switch_success_unselect: "&a✔ Альт &e%alt_name% &aуспешно снят."
+  switch_not_found_in_db: "&c⚠ Твоя запись не найдена в базе."
+  switch_remove_error: "&c❌ Ошибка при снятии альта."
+  switch_alt_not_found: "&c❌ Альт &e%alt_name% &cне найден."
+  switch_no_permission_alt: "&c⛔ У тебя нет прав переключаться на этого альта."
+  switch_already_as_alt: "&c⛔ Ты уже играешь как альт и не можешь переключаться на других альтов."
+  switch_alt_taken: "&cℹ Альт уже выбран игроком: &e%taken_by%"
+  switch_success: "&a✔ Ты переключился на альта &e%alt_name%"
+  switch_error: "&c❌ Ошибка при выборе альта."
+
+  # ━━━━━━━ Команда: /salts unselect ━━━━━━━
+  unselect_usage: "&cИспользование: /salts unselect <player_name>"
+  unselect_player_not_found: "&c⚠ Игрок &e%player% &cне найден в базе."
+  unselect_none: "&eℹ У игрока &b%player% &eне выбран альт."
+  unselect_success_admin: "&a✔ Альт &e%alt_name% &aснят с &b%player%"
+  unselect_success_alt: "&aВаш альт &e%alt_name% &aснят с &b%player%"
+  unselect_error: "&c❌ Ошибка при удалении selected_alt."
+
+  # ━━━━━━━ Команда: /salts db_init ━━━━━━━
+  db_init_success: "&a✔ База успешно инициализирована!"
+  db_init_error: "&c❌ Ошибка при инициализации БД: %error%"
+  db_init_index_warning: "&e⚠ Не удалось создать индекс selected_alt: %error%"
+
+  # ━━━━━━━ Команда: /salts delete ━━━━━━━
+  delete_usage: "&cИспользование: /salts delete <alt_name>"
+  delete_no_alts: "&c⚠ Альтов в базе не найдено."
+  delete_not_found: "&c❌ Альт &e%alt_name% &cне найден в кэше."
+  delete_success: "&a✔ Альт &e%alt_name% &aуспешно удалён из базы и системы."
+  delete_sql_error: "&c❌ Ошибка SQL при удалении альта: %error%"
+
+  # ━━━━━━━ Команда: /salts list ━━━━━━━
+  list_empty: "&c❌ Альты отсутствуют."
+  list_invalid_page: "&c⚠ Страница должна быть числом."
+  list_header: "&8&m--------&r &6&lАльты &7(Page %page%/%pages%) &8&m--------"
+  list_format: " &6• &e%alt_name% &7→ %owner%"
+  list_hover: "&c⛔ Нажмите, чтобы удалить альта"
+  list_footer: "&8&m----------------------------------"
