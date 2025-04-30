@@ -44,6 +44,9 @@ public class ReloadCommand extends SubCommand {
             Main.getInstance().startAltCacheTask();
 
             sender.sendMessage(Main.getInstance().getConfigManager().getMessage("reload_success", Collections.emptyMap() ));
+
+            if( Main.getInstance().getConfigManager().getDebugLogState() )
+                Main.getInstance().getLogger().info("Конфигурация успешно перезагружена! И DebugLOG был включен!");
         } catch (Exception e) {
             e.printStackTrace();
             sender.sendMessage(Main.getInstance().getConfigManager().getMessage("reload_error",

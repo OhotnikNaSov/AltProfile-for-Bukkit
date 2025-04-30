@@ -61,4 +61,5 @@ public class ConfigManager {
     public String getMySQLDatabase() { return config.getString("mysql.database"); }
     public String getMySQLUsername() { return config.getString("mysql.username"); }
     public String getMySQLPassword() { return config.getString("mysql.password"); }
+    public Boolean getDebugLogState() { return  config.getBoolean("debug-log"); }
 }

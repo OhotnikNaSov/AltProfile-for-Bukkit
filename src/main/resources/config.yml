@@ -8,6 +8,8 @@ mysql:
 cache:
   refresh-interval-seconds: 300
 
+debug-log: false
+
 messages:
 
   # ━━━━━━━ Общие системные сообщения ━━━━━━━

@@ -97,13 +97,15 @@ public class Main extends JavaPlugin {
                 this,
                 () -> {
                     altCacheManager.loadCache();
-                    getLogger().info("Кеш альтов обновлён. Всего: " + altCacheManager.getAllAltNames().size());
+                    if(configManager.getDebugLogState())
+                        getLogger().info("Кеш альтов обновлён. Всего: " + altCacheManager.getAllAltNames().size());
                 },
                 interval * 20L,
                 interval * 20L
         ).getTaskId();
 
-        getLogger().info("Автокеширование альтов запущено (интервал: " + interval + " сек)");
+        if(configManager.getDebugLogState())
+            getLogger().info("Автокеширование альтов запущено (интервал: " + interval + " сек)");
     }
 
     @Override

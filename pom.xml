@@ -6,7 +6,7 @@
 
     <groupId>sova.sAlts</groupId>
     <artifactId>salts</artifactId>
-    <version>3.0</version>
+    <version>3.1</version>
     <packaging>jar</packaging>
 
     <name>salts</name>

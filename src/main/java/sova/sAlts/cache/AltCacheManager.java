@@ -25,7 +25,8 @@ public class AltCacheManager {
             }
 
         } catch (Exception e) {
-            Main.getInstance().getLogger().warning("❌ Не удалось загрузить кеш альтов: " + e.getMessage());
+            if( Main.getInstance().getConfigManager().getDebugLogState() )
+                Main.getInstance().getLogger().warning("❌ Не удалось загрузить кеш альтов: " + e.getMessage());
         }
     }
 

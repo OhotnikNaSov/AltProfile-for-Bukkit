@@ -36,17 +36,19 @@ public class DatabaseManager {
             config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
             dataSource = new HikariDataSource(config);
-
-            Main.getInstance().getLogger().info("Подключение к MySQL успешно установлено!");
+            if( main.getConfigManager().getDebugLogState() )
+                main.getLogger().info("Подключение к MySQL успешно установлено!");
         } catch (Exception e) {
-            Main.getInstance().getLogger().warning("Не удалось подключиться к MySQL: " + e.getMessage());
+            if( Main.getInstance().getConfigManager().getDebugLogState() )
+                Main.getInstance().getLogger().warning("Не удалось подключиться к MySQL: " + e.getMessage());
         }
     }
 
     public void disconnect() {
         if (dataSource != null && !dataSource.isClosed()) {
             dataSource.close();
-            Main.getInstance().getLogger().info("Подключение к MySQL было закрыто.");
+            if( Main.getInstance().getConfigManager().getDebugLogState() )
+                Main.getInstance().getLogger().info("Подключение к MySQL было закрыто.");
         }
     }
 
